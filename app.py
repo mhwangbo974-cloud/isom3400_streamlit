@@ -9,7 +9,7 @@ st.title("Business Data Dashboard")
 
 # Introduction text
 st.write("This dashboard helps visualize sales data over time.")
-
+st.write("야르~")
 # Sample data
 date_rng = pd.date_range(start='1/1/2023', end='12/31/2023', freq='ME')
 df = pd.DataFrame(date_rng, columns=['date'])
