@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # 1. Page Configuration & Title
-st.set_page_config(page_title=""Simple Data App"", layout=""centered"")
+st.set_page_config(page_title="Simple Data App", layout=""centered"")
 st.title(""Interactive Sales Dashboard"")
 st.write(""Adjust the controls in the sidebar to update the chart and data."")
 
