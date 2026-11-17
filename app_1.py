@@ -27,3 +27,16 @@ filtered_data = data[data["Month"].isin(selected_months)]
 st.subheader("Filtered Data")
 st.dataframe(filtered_data)
 
+st.subheader("Sales Chart")
+fig, ax = plt.subplots()
+ax.plot(filtered_data["Month"], filtered_data["Sales"],
+        marker='o', label="Sales")
+if show_expenses:
+    ax.plot(filtered_data["Month"], filtered_data["Expenses"],
+            marker='o', label="Expenses")
+ax.set_title("Monthly Performance")
+ax.set_xlabel("Month")
+ax.set_ylabel("Amount ($)")
+ax.legend()
+st.pyplot(fig)
+
