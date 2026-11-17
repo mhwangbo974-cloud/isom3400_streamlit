@@ -16,3 +16,10 @@ data = pd.DataFrame({
     "Sales": sales,
     "Expenses": expenses
 })
+
+st.sidebar.header("Filters")
+selected_months = st.sidebar.multiselect("Select Months", months,
+                                         default=months)
+show_expenses = st.sidebar.checkbox("Show Expenses", value=True)
+
+filtered_data = data[data["Month"].isin(selected_months)]
