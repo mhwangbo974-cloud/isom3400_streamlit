@@ -7,4 +7,4 @@ st.write(12345)
 st.write({"Name": "Alice", "Age": 30})
 
 st.write("**Bold Text** and *Italic Text*")
-st.markdown("<u>hello</u>")
+st.markdown("<u>hello</u>", unsafe_allow_html=True)
