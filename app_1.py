@@ -1,30 +1,11 @@
 import streamlit as st
 
-st.title("Welcome to Streamlit!")
+st.title("Retail Business Dashboard")
+st.header("Manager Input section")
+st.write("Please enter the monthly sales target and select the region")
 
-st.write("Hello, Streamlit!")
-st.write(12345)
-st.write({"Name": "Alice", "Age": 30})
-
-st.write("**Bold Text** and *Italic Text*")
-st.markdown("<u>hello</u>", unsafe_allow_html=True)
-st.markdown("<b>hello</b>", unsafe_allow_html=True)
-st.markdown("<i>hello</i>", unsafe_allow_html=True)
-
-st.title("Title")
-st.header("Section 1: Introduction")
-st.subheader("subheader")
-
-age = st.number_input("Enter your age:",
-                      min_value=0,
-                      max_value=120,
-                      value=25)
-st.write(f"Your age is {age}")
-
+sales = st.number_input("Enter Monthly Sales Target(in USD):", value=50000)
 option = st.selectbox("Choose your favorite color:",
-                      ["Red", "Blue", "Green"])
-st.write(f"You selected: {option}")
+                      ["North", "South", "East", "West"], value="North")
 
-if st.button("Click Me"):
-    st.write("Button clicked!")
-    st.success("Operation completed successfully!")
+st.button("Submit")
