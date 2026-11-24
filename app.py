@@ -39,7 +39,7 @@ with tab2:
         "Quick delivery and excellent support."
     ]
     for feedback in customer_feedback:
-        st.write(f"- {feedback}")
+        st.write(f"- {feedback}")   # hyphen 이 아닌 bulletpoint 로 표시됨 streamlit 에서
 with tab3:
     st.write("Content for Market Trends")
     market_trends = {
@@ -55,7 +55,7 @@ with st.expander("More Information"):
     st.write("Data was collected through surveys and sales reports.")
 
 # Dynamic Containers
-placeholder = st.empty()
+placeholder = st.empty() 
 
 # Simulate loading data and updating the placeholder
 for i in range(5):
