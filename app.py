@@ -1,30 +1,24 @@
-# business_app.py
 import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
-# Title of the app
-st.title("Business Data Dashboard")
+# Title
+st.title("Basic Web Calculator")
 
-# Introduction text
-st.write("This dashboard helps visualize sales data over time.")
-st.write("야르~")
-# Sample data
-date_rng = pd.date_range(start='1/1/2023', end='12/31/2023', freq='ME')
-df = pd.DataFrame(date_rng, columns=['date'])
-df['sales'] = np.random.randint(100, 500, size=(len(date_rng)))
+# Input fields
+num1 = st.number_input("Enter first number", value=0.0)
+num2 = st.number_input("Enter second number", value=0.0)
 
-st.write(df)
+# Operation selection
+operation = st.selectbox("Choose operation", ["Add", "Subtract", "Multiply", "Divide"])
 
-# Data visualization with Streamlit
-st.subheader("Monthly Sales Data")
-st.line_chart(df.set_index('date'))
+# Calculate
+if st.button("Calculate"):
+    if operation == "Add":
+        result = num1 + num2
+    elif operation == "Subtract":
+        result = num1 - num2
+    elif operation == "Multiply":
+        result = num1 * num2
+    elif operation == "Divide":
+        result = num1 / num2 if num2 != 0 else "Error: Division by zero"
 
-# Adding a slider for user input
-sales_threshold = st.slider("Sales threshold", 100, 500, 300)
-
-# Filtering and displaying data based on user input
-filtered_data = df[df['sales'] >= sales_threshold]
-st.write(f"Months with sales above {sales_threshold}")
-st.write(filtered_data)
+    st.success(f"Result: {result}")
