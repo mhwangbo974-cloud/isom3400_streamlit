@@ -22,6 +22,6 @@ if st.button("Calculate"):
     elif operation == "Divide":
         result = num1 / num2 if num2 != 0 else "Error: Division by zero"
     elif operation == "sin()":
-        result = round(math.sin(math.radians(num1)), 6)
+        result = math.sin(num1)
 
     st.success(f"Result: {result}")
